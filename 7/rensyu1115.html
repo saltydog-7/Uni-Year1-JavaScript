@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>NONE</title>
+<script>
+function wa() {
+  //変数(コップ)を3つ用意
+  var x, y, ans;
+  //計算結果出力用
+  var res=document.getElementById("result");
+
+  //変数xに、最初のボックスに入れた数字を代入
+  x=window.document.myform.s.value-0;
+  //変数yに、 2つ目のボックスに入れた数字を代入
+  y=window.document.myform.t.value-0;
+  //変数ansに足し算結果を代入
+  ans=x+y;
+
+  //計算結果(変数ansの中身)を表示
+  res.innerHTML=ans+"です";
+}
+</script>
+</head>
+<body>
+<p>2つのボックスに数字(半角で)を入れて「計算する」をクリック</p>
+<p>
+<form name="myform">
+<input type="text" name="s">
++
+<input type="text" name="t">
+<br>
+<input type="button" value="計算する" onclick="wa()">
+</form>
+</p>
+<div id="result">ここに結果が出力されます</div>
+</body>
+</html>

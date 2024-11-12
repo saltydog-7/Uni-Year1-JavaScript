@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>4</title>
+<script>
+function foreign() {
+  var a;
+  var res=document.getElementById("result");
+  var hkd=15;
+  var usd=110;
+  var gbp=150;
+  a=window.document.myform.a.value-0;
+
+  if (document.myform.for[0].checked) {
+    res.innerHTML=(a*hkd+"円");
+  } else if (document.myform.for[1].checked) {
+    res.innerHTML=(a*usd+"円");
+  } else if (document.myform.for[2].checked) {
+    res.innerHTML=(a*gbp+"円");
+  }
+}
+</script>
+</head>
+<body>
+<h1>通貨換算機</h1>
+<p>
+<form name="myform">
+<p><input name="a" type="text" placeholder="半角の数学で入力"></p>
+<p><input type="radio" name="for" value="hkd">香港 ドル (=15円)
+<input type="radio" name="for" value="usd">アメリカ ドル (=110円)
+<input type="radio" name="for" value="gbp">イギリス ポンド (=150円)</p>
+<p>を日本円に計算する</p>
+<p><div id="result">ここに結果が出力されます</div></p>
+<input type="button" value="計算する" onclick="foreign()">
+</form>
+</p>
+</body></html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script>
+function doltoyen() {
+  //変数(コップ)yenを用意
+  var yen;
+  //変数rateを用意し115を入れる
+  var rate=115;
+
+  //1ドルを円に換算し、画面に出力する
+  yen=1*rate;
+  document.writeln("1ドル="+yen+"円");
+  //改行
+  document.writeln("<br>");
+
+  //2ドルを円に換算し、画面に出力する
+  yen=2*rate;
+  document.writeln("2ドル="+yen+"円");
+  //改行
+  document.writeln("<br>");
+
+  //3ドルを円に換算し、画面に出力する
+  yen=3*rate;
+  document.writeln("3ドル="+yen+"円");
+  //改行
+  document.writeln("<br>");
+
+}
+function doltoyen2() {
+  var yen
+  var rate=115
+
+  for (var d=1000; d>=1; d=d-1) {
+    yen=d*rate;
+    document.writeln(d+"ドル="+yen+"円");
+    document.writeln("<br>");
+  }
+}
+</script>
+</head>
+<body>
+<p>ドルを円に換算する(1ドル115円)</p>
+<script>
+doltoyen2();
+</script>
+</body>
+</html>

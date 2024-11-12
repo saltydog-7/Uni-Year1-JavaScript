@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3-5</title>
+<script>
+function high() {
+  var a, b, c;
+  var res=document.getElementById("result");
+  a=window.document.myform.a.value-0;
+  b=window.document.myform.b.value-0;
+  c=window.document.myform.c.value-0;
+  if (a>b && a>c) {
+    res.innerHTML="最高点は"+a+"です";
+  } else if (b>a && b>c) {
+    res.innerHTML="最高点は"+b+"です";
+  } else if (c>a && c>b) {
+    res.innerHTML="最高点は"+c+"です";
+  } else if (a==b || a==c) {
+    res.innerHTML="最高点は"+a+"です";
+  } else if (b==c) {
+    res.innerHTML="最高点は"+b+"です";
+  } else if (a==b==c) {
+    res.innerHTML="最高点は"+a+"です";
+  } else {
+    res.innerHTML="入力ミスがあったため、プログラムの実行ができません。";
+  }
+}
+</script>
+</head>
+<body>
+<p>3つのボックスに数字(半角で)を入れて「最高点」をクリック</p>
+<p>
+<form name="myform">
+数字1:<input type="text" name="a">
+<p>数字2:<input type="text" name="b"></p>
+<p>数字3:<input type="text" name="c"></p>
+<p><input type="button" value="最高点" onclick="high()"></p>
+</form>
+</p>
+<div id="result">ここに結果が出力されます</div>
+</body>
+</html>

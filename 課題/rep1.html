@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3-1</title>
+<script>
+function judge() {
+  //コップansを用意し、表示(出力)先とする
+  var ans=document.getElementById("answer");
+  //コップaを用意する
+  var a;
+  //ボックスaに入力された数字をコップaに入れる
+  a=window.document.myform.a.value-0;
+
+  //判定し、その結果を表示(出力)する
+  if (a>90) {
+    ans.innerHTML="Sです";
+  } else if (a>=80) {
+    ans.innerHTML="Aです";
+  } else if (a>=70) {
+    ans.innerHTML="Bです";
+  } else if (a>=60) {
+    ans.innerHTML="Cです";
+  } else {
+    ans.innerHTML="Fです";
+  }
+}
+</script>
+</head>
+<body>
+<p>数字(テストの結果)を入れて「合否判定」をクリック</p>
+<p>
+<form name="myform">
+数字:<input name="a" type="text" placeholder="半角で入力">
+<input type="button" value="合否判定" onclick="judge()">
+</form>
+</p>
+<div id="answer">ここに結果が出力されます</div>
+</body>
+</html>

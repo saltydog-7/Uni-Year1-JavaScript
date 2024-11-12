@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>NONE</title>
+<style>
+#canvas {
+  background-color: #000000;
+  border: 1px solid #999999;
+}
+</style>
+<script>
+var spdx=2.0;  //横(x軸)方向への円の移動速度
+var spdy=2.0;
+var coox=200;  //円中心のx座標
+var cooy=200;  //円中心のy座標
+var canvas, context;
+
+function init() {
+  //canvasを使えるかどうか判定
+  canvas=document.getElementById("canvas");
+  context=canvas.getContext("2d");
+  if (!context) return;
+
+  //30ミリ秒ごとにdrawing()を実行するようにタイマーを設定
+  //関数の名前だけを書く点に注意
+  setInterval(drawing,30);
+  }
+
+function drawing() {
+  //Canvasを塗りつぶす
+  context.globalCompositeOperation="source-over";
+  context.fillStyle="rgba(0,0,0,0.2)";
+  context.fillRect(0,0,canvas.width,canvas.height);
+  context.globalCompositeOperation="lighter";
+
+  //円の中心位置を更新(横方向)
+  coox=coox+spdx;
+
+  //左右(横方向)の移動方向を反転
+  if (coox<0 || coox>canvas.width) {
+    spdx=spdx*(-1);
+  }
+
+  cooy=cooy+spdy;
+
+  if (cooy<0 || cooy>canvas.height) {
+    spdy=spdy*(-1);
+  }
+
+  //更新後の位置に円を描画
+  context.beginPath();
+  context.fillStyle="#ff0066";
+  context.arc(coox,cooy,3,0,Math.PI*2.0,true);
+  context.fill();
+}
+</script>
+</head>
+<body onload="init()">
+<canvas id="canvas" width="640" height="480">
+</body>
+</html>

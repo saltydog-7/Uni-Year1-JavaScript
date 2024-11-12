@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3-4</title>
+<script>
+var t=0;
+function imgswap() {
+  var a, b, c;
+  t=t+1;
+  a=window.document.images[0].src;
+  b=window.document.images[1].src;
+  c=a;
+  window.document.images[0].src=b;
+  window.document.images[1].src=c;
+  document.fgColor="blue";
+  if (t%2) {
+    document.fgColor="red";
+  } else {
+    document.fgColor="blue";
+  }
+}
+</script>
+</head>
+<body>
+<p>左右の画像を入れ替え</p>
+<div><img src="pumpkin.png"><img src="trickortreat.png"></div>
+<div>
+<form name="myform">
+<input type="button" value="入れ替え" onclick="imgswap()">
+</form>
+</div>
+</body></html>

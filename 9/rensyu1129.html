@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+#canvas {
+  border: 1px solid navy;
+}
+</style>
+<script>
+function drawing() {
+  //描画する場所を取得
+  var canvas=window.document.getElementById("canvas");
+  //描画するための準備としてコンテキスト(道具)を取得
+  var context=canvas.getContext("2d");
+  //道具を取得出来なければ描画しない
+  if (!context) return;
+
+
+
+  context.strokeStyle="rgba(128,0,128,1)";
+  context.fillStyle="rgba(0,255,255,1)";
+  context.beginPath();
+  context.moveTo(400,50);
+  context.lineTo(450.150);
+  context.lineTo(400,150);
+  context.closePath();
+  context.fill();
+  context.stroke();
+
+  //線の色と太さ
+  context.strokeStyle="rgba(255,0,0,1)";
+  context.lineWidth=3;
+
+  //繰り返し
+  for (var n=0; n<=4; n=n+1) {
+    //四角形を描画
+    context.strokeRect(30+70*n,40,50,100);
+  }
+}
+</script>
+</head>
+<body onload="drawing()">
+<h1>HTMLでお絵かき</h1>
+<canvas id="canvas" width="800" height="800">
+</body>
+</html>

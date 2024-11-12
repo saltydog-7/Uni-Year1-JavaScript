@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3-7</title>
+<script>
+function dictionary() {
+  var ans=document.getElementById("answer");
+  var a;
+  a=window.document.myform.a.value;
+  if (a=="turtle") {
+    ans.innerHTML="<img src='speed_slow_turtle.png'>";
+  } else if (a=="apple") {
+     ans.innerHTML="<img src='apple_kajiru.png'>";
+  } else {
+    ans.innerHTML="<img src='message_gomennasai.png'>";
+  }
+}
+</script>
+</head>
+<body>
+<p>英単語からイラストを検索</p>
+<p>
+<form name="myform">
+英単語:<input name="a" type="text" placeholder="半角で入力">
+<input type="button" value="辞書検索" onclick="dictionary()">
+</form>
+</p>
+<div id="answer"><img src="denshi_jisyo.png"</div>
+</body>
+</html>

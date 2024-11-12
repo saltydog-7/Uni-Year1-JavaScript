@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>NONE</title>
+<script>
+function swap() {
+  var a, b, c;
+  a=window.document.myform.a.value;
+  b=window.document.myform.b.value;
+  c=a;
+  a=b;
+  b=c;
+  window.document.myform.a.value=a;
+  window.document.myform.b.value=b;
+  document.fgColor="red";
+}
+</script>
+</head>
+<body>
+<p>コップに飲み物を入れて-入れ替え-をクリック</p>
+<form name="myform">
+コップA:<input name="a" type="text"><br>
+コップB:<input name="b" type="text"><br>
+<input type="button" value="入れ替え" onclick="swap()">
+</form>
+</body>
+</html>

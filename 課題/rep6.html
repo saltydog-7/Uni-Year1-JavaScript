@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3-6</title>
+<script>
+function judge() {
+  var ans=document.getElementById("answer");
+  var a;
+  a=window.document.myform.a.value;
+  if (a=="B") {
+    ans.innerHTML="仏教学部";
+  } else if (a=="L") {
+    ans.innerHTML="法学部";
+  } else if (a=="H") {
+    ans.innerHTML="医療健康科学部";
+  } else if (a=="C" || a=="N" || a=="S") {
+    ans.innerHTML="文学部";
+  } else if (a=="E") {
+    ans.innerHTML="経済学部";
+  } else if (a=="M") {
+    ans.innerHTML="経営学部";
+  } else if (a=="G") {
+    ans.innerHTML="GMS学部";
+  } else {
+    ans.innerHTML="コードが正しくありません";
+  }
+}
+</script>
+</head>
+<body>
+<p>学部コードから学部名を表示</p>
+<p>
+<form name="myform">
+学部コード:<input name="a" type="text" placeholder="半角の大文字で入力">
+<input type="button" value="学部検索" onclick="judge()">
+</form>
+</p>
+<div id="answer">ここに結果が出力されます</div>
+</body>
+</html>
